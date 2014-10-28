@@ -14,15 +14,25 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="AAAService" />
+				<Directory Id="TheCompany" Name="TheCompany">
+						<Directory Id="INSTALLFOLDER" Name="AAAService" />
+				</Directory>
 			</Directory>
 		</Directory>
 	</Fragment>
 
 	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">			
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component>
+				<File Source="..\MyService\bin\Debug\log4net.dll" />
+			</Component>
 			<Component Id="ProductComponent">
-				<!--<File Id="Insert dll name" Name="Insert dll name again" Source="Insert path to dll" Vital="yes" KeyPath="no" DiskId="1"/>-->
+				<File Id="MyService.exe.config"
+							Name="MyService.exe.config"
+							Source="..\MyService\bin\Debug\MyService.exe.config"
+							Vital="yes"
+							KeyPath="no"
+							DiskId="1" />
 				<File Id="MyService.exe" Name="MyService.exe" Source="..\MyService\bin\Debug\MyService.exe" Vital="yes" KeyPath="yes" DiskId="1"/>
 				<ServiceInstall
 					Id="ServiceInstaller"
