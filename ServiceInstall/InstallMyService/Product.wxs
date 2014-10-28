@@ -47,7 +47,7 @@
 					Interactive="no"
               >
 				</ServiceInstall>
-				<!-- <ServiceControl Id="StartService" Start="install" Stop="both" Remove="uninstall" Name="AAAService" Wait="yes" />-->
+				<ServiceControl Id="StartService" Start="install" Stop="both" Remove="uninstall" Name="AAAService" Wait="yes" />
 			</Component>
 
 		</ComponentGroup>
